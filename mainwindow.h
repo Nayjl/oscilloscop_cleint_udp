@@ -3,12 +3,16 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QVector>
+
 
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "qcustomplot.h"
+#include "udp_clss.h"
 
 
 
@@ -32,6 +36,11 @@ public:
 private:
     Ui::MainWindow *ui;
     QTimer dataTimer;
+    QCustomPlot *customPlot;
+    QVector<double> xp;
+    QVector<double> xy;
+    void setupPlot();
+    void renderingPlot();
 
 
 

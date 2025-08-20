@@ -19,29 +19,29 @@
 
 #pragma pack(push, 1)
 struct protocol_command_udp {
-    uint8_t command;
     size_t quantity_byte;
+    uint8_t command;
     uint32_t data_client;
 };
 
 #pragma pack(pop)
 
-
 class udp_clss
 {
 public:
-    udp_clss(uint16_t potr_udp, char *ip_addr);
+    udp_clss();
     ~udp_clss();
     int udp_sock;
     int epoll_fd;
     struct sockaddr_in serv_addr;
     socklen_t client_len;
     struct epoll_event ev, events_find[MAX_EVENTS];
-
+    int status;
+    void set_ip_addr(uint16_t potr_udp, char *ip_addr);
 };
 
 
 int set_nonblocking(int fd);
-void control_interes_epoll(struct epoll_event *ev, int epoll_fds, int interes_sock, uint32_t interes_event, int mode_ctl);
+int control_interes_epoll(struct epoll_event *ev, int epoll_fds, int interes_sock, uint32_t interes_event, int mode_ctl);
 
 #endif // UDP_CLSS_H
