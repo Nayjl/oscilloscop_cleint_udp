@@ -33,7 +33,14 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="QLineEdit" name="linaEditipaddr">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>ip addr</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditipaddr">
           <property name="minimumSize">
            <size>
             <width>111</width>
@@ -47,7 +54,7 @@
            </size>
           </property>
           <property name="text">
-           <string>192.168.1.33</string>
+           <string>127.0.0.1</string>
           </property>
          </widget>
         </item>
@@ -75,6 +82,13 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>port</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QLineEdit" name="lineEditport">
           <property name="minimumSize">
            <size>
@@ -88,28 +102,15 @@
             <height>16777215</height>
            </size>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_conn_2">
-          <property name="minimumSize">
-           <size>
-            <width>81</width>
-            <height>31</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>140</width>
-            <height>16777215</height>
-           </size>
-          </property>
           <property name="text">
-           <string>Disconnect</string>
+           <string>8085</string>
           </property>
          </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="sampleRateLineEdit"/>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -142,6 +143,9 @@
        </layout>
       </item>
       <item>
+       <widget class="QTextEdit" name="massageTextEdit"/>
+      </item>
+      <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QCheckBox" name="channel_1">
@@ -172,17 +176,7 @@
          </widget>
         </item>
         <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
+         <widget class="QTextEdit" name="logTextEdit"/>
         </item>
        </layout>
       </item>

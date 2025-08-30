@@ -1,4 +1,4 @@
-QT       += core gui printsupport
+QT       += core gui printsupport network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,12 +12,14 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     qcustomplot.cpp \
-    udp_clss.cpp
+    tcpsocket.cpp \
+    udpsocket.cpp
 
 HEADERS += \
     mainwindow.h \
     qcustomplot.h \
-    udp_clss.h
+    tcpsocket.h \
+    udpsocket.h
 
 FORMS += \
     mainwindow.ui
