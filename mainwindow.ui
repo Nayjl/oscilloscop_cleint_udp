@@ -110,7 +110,11 @@
        </layout>
       </item>
       <item>
-       <widget class="QLineEdit" name="sampleRateLineEdit"/>
+       <widget class="QLineEdit" name="sampleRateLineEdit">
+        <property name="text">
+         <string>350</string>
+        </property>
+       </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_6">

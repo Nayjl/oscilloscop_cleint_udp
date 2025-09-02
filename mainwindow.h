@@ -7,7 +7,7 @@
 #include <QUdpSocket>
 #include <QDebug>
 
-#include "udpsocket.h"
+// #include "udpsocket.h"
 #include "qcustomplot.h"
 
 #define TEORIC_MAX_BYTE_SEND_UDP 65507
@@ -45,11 +45,13 @@ private:
     void renderingPlot();
     void calcSizeShot();
 
+    int writeIndex;
     QVector<double> xTime;
     QVector<double> yAmpl;
     int sampleRate;
     double timeStep;
     int number_din_data;
+    int maxSizeBuffer;
     int *buffSock;
 
     QUdpSocket *socket_client;
@@ -62,7 +64,7 @@ private:
 
 
 private slots:
-    void realtimeDataSlot();
+    // void realtimeDataSlot();
 
     void on_pushButton_conn_clicked();
     void parseData();

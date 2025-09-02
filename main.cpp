@@ -16,9 +16,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    {
-        int fec = 0;
-    }
-    int fec;
     return a.exec();
 }

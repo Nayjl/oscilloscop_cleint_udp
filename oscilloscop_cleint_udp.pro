@@ -11,15 +11,11 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    qcustomplot.cpp \
-    tcpsocket.cpp \
-    udpsocket.cpp
+    qcustomplot.cpp
 
 HEADERS += \
     mainwindow.h \
-    qcustomplot.h \
-    tcpsocket.h \
-    udpsocket.h
+    qcustomplot.h
 
 FORMS += \
     mainwindow.ui
