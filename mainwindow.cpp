@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     customPlot = ui->plot;
     writeIndex = 0;
+    isPaused = true;
+    choiceChennal = 0;
 
     calcSizeShot();
     maxSizeBuffer = number_din_data * sizeof(double);
@@ -95,7 +97,7 @@ void MainWindow::readPendingDatagrams() {
     }
 
     dataptr = (int*)datagram.data();
-    if (sizeRecv >= (int)(sizeof(int) * OFFSET_SEND)) {
+    if (sizeRecv >= (qint64)(sizeof(int) * OFFSET_SEND)) {
         double dataSocket;
         for (int i = 0; i < OFFSET_SEND; ++i) {
             dataSocket = (double)dataptr[i];
@@ -118,7 +120,7 @@ void MainWindow::readPendingDatagrams() {
 
 void MainWindow::parseData() {
     customPlot->graph(0)->setData(xTime, yAmpl);
-    customPlot->yAxis->rescale();
+    // customPlot->yAxis->rescale();
 
     customPlot->replot();
 }
@@ -132,6 +134,17 @@ void MainWindow::calcSizeShot() {
 
 
 void MainWindow::on_statrplot_clicked() { // Для увуличения или уменьшения глубины отрисовки
+    isPaused = !isPaused; // Переключаем состояние
+    if (isPaused) {
+        ui->statrplot->setText("Возобновить");
+        dataTimer.stop();
+    } else {
+        ui->statrplot->setText("Пауза");
+        dataTimer.start(15);
+        parseData();
+    }
+
+    // choiceChennal = ui->channel_1->checkState();
     calcSizeShot();
     maxSizeBuffer = number_din_data * sizeof(double);
     writeIndex = 0;

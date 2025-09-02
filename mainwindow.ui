@@ -127,20 +127,7 @@
            </size>
           </property>
           <property name="text">
-           <string>start plot</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="stopplot">
-          <property name="maximumSize">
-           <size>
-            <width>140</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>stop plot</string>
+           <string>Пауза</string>
           </property>
          </widget>
         </item>

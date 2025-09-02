@@ -46,6 +46,8 @@ private:
     void calcSizeShot();
 
     int writeIndex;
+    bool isPaused;
+    int choiceChennal;
     QVector<double> xTime;
     QVector<double> yAmpl;
     int sampleRate;
